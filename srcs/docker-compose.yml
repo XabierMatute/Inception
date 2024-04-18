@@ -41,12 +41,12 @@ volumes:
     name: database
     driver_opts:
       type: volume
-      device: /home/$USER/data/database # tienen que existir
+      device: /home/xmatute-/data/database # tienen que existir
       o: bind
   webfiles:
     name: webfiles
     driver_opts:
       type: volume
-      device: /home/$USER/data/webfiles # tienen que existir
+      device: /home/xmatute-/data/webfiles # tienen que existir
       o: bind
 
