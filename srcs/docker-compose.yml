@@ -7,7 +7,7 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: $MARIADB_ROOT_PASSWORD
     volumes:
-      - "database:$MARIADB_VOLUME/Z"
+      - "database:/var/lib/mysql/Z"
     networks:
       - MojaveNet
 
