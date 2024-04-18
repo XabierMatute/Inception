@@ -17,10 +17,10 @@ services:
     volumes:
     - "webfiles:/etc/nginx/templates/Z"
     ports:
-    - "8080:$NGINX_PORT/tcp"
+    - "443:42/tcp"
     environment:
     - NGINX_HOST=foobar.com
-    - NGINX_PORT=$NGINX_PORT
+    - NGINX_PORT=42
     networks:
       - MojaveNet
 
