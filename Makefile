@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 19:55:46 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/18 14:48:07 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/18 14:56:13 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ CYAN = \033[0;36m
 GREEN = \033[0;32m
 MAGENTA = \033[0;35m
 
-all : $(DCYML) $(DTB_DIR) #$(DTB_DIR) $(WF_DIR)
+all : $(DCYML) $(DTB_DIR) $(WF_DIR)
 	docker-compose -f $(DCYML) config
 	@echo "making all..."
 	docker-compose -f $(DCYML) up --build --detach
