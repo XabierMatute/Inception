@@ -1,0 +1,10 @@
+.git
+.gitignore
+Dockerfile
+.dockerignore
+README.md
+LICENSE
+.vscode
+*.log
+tmp
+.DS_Store

@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: $MARIADB_ROOT_PASSWORD
+    volumes:
+      - "database:$MARIADB_VOLUME/Z"
+    networks:
+      - MojaveNet
+
+  nginx:
+    container_name: nginx
+    image: nginx
+    volumes:
+    - "webfiles:/etc/nginx/templates/Z"
+    ports:
+    - "8080:$NGINX_PORT/tcp"
+    environment:
+    - NGINX_HOST=foobar.com
+    - NGINX_PORT=$NGINX_PORT
+    networks:
+      - MojaveNet
+
+  wordpress:
+    container_name: wordpress
+    image: wordpress
+    networks:
+      - MojaveNet
+
+
+networks:
+  MojaveNet:
+    name: MojaveNet
+    driver: bridge
+
+
+volumes:
+  database:
+    name: database
+    driver_opts:
+      type: volume
+      device: /home/$USER/data/database # tienen que existir + el subject pone otra ruta
+      o: bind
+  webfiles:
+    name: webfiles
+    driver_opts:
+      type: volume
+      device: /home/$USER/data/webfiles # tienen que existir
+      o: bind
+

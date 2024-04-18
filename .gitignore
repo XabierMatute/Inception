@@ -1,0 +1,20 @@
+# Archivos ejecutables y binarios:
+*.out
+*.o
+
+# Archivos de configuración del sistema: 
+.vscode/
+.idea/
+
+# Archivos temporales:
+*~
+
+# Archivos de caché:
+.cache/
+
+# Archivos específicos de sistema operativo:
+Thumbs.db
+.DS_Store
+
+# Archivos de configuración de entorno:
+.env
