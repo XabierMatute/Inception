@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 19:55:46 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/18 14:39:49 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/18 14:40:44 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,12 @@ all : $(DCYML) $(DTB_DIR) $(WF_DIR)
 	docker ps
 	docker volume ls
 	docker network ls
+
+$(DTB_DIR) :
+	mkdir -p $(DTB_DIR)
+
+$(WF_DIR) :
+	mkdir -p $(WF_DIR)
 
 clean :
 	docker-compose -f $(DCYML) down --volumes
