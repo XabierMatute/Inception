@@ -41,7 +41,7 @@ volumes:
     name: database
     driver_opts:
       type: volume
-      device: /home/$USER/data/database # tienen que existir + el subject pone otra ruta
+      device: /home/$USER/data/database # tienen que existir
       o: bind
   webfiles:
     name: webfiles
