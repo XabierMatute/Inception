@@ -11,10 +11,14 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD' ;
 FLUSH PRIVILEGES ;
 " > /tmp/init.sql
 
+echo "init.sql created"
+
 # create database and user
 mysql -u root < /tmp/init.sql
 
+echo "Database: $MYSQL_DATABASE created"
 
+# remove the file
 rm /tmp/init.sql
 
 # stop mysql
