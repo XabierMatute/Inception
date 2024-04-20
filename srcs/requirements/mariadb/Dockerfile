@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 17:36:03 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/20 18:43:30 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/20 18:57:21 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,4 +29,4 @@ COPY ./tools/init.sh  /tmp/init.sh
 
 # iniciar servicio
 
-ENTRYPOINT [ "init.sh" ]
+ENTRYPOINT [ "/tmp/init.sh" ]
