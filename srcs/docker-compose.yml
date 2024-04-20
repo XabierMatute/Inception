@@ -3,7 +3,7 @@ version: '3'
 services:
   mariadb:
     container_name: mariadb
-    build: ./mariadb
+    build: ./requirements/mariadb
     image: mariadb
     volumes:
       - "database:/var/lib/mysql"
@@ -15,7 +15,7 @@ services:
 
   nginx:
     container_name: nginx
-    build: ./nginx
+    build: ./requirements/nginx
     image: nginx
     volumes:
     - "webfiles:/etc/nginx/templates"
@@ -34,7 +34,7 @@ services:
 
   wordpress:
     container_name: wordpress
-    build: ./wordpress
+    build: ./requirements/wordpress
     image: wordpress
     networks:
       - MojaveNet
