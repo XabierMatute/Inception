@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 19:49:58 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/18 14:00:11 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/20 19:14:46 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ RUN apt -y update && \
     apt -y install curl
     # curl necesario para WP-CLI
 
-COPY tools/init.sh /
+COPY tools/init.sh /init.sh
+RUN chmod +x /init.sh
 
-ENTRYPOINT [ "/init.sh" ]
+CMD [ "/init.sh" ]
