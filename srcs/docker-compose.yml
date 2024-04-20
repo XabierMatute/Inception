@@ -3,19 +3,24 @@ version: '3'
 services:
   mariadb:
     container_name: mariadb
+    build: ./srcs/mariadb
     image: mariadb
     environment:
       MARIADB_ROOT_PASSWORD: $MARIADB_ROOT_PASSWORD
     volumes:
-      - "database:/var/lib/mysql/Z"
+      - "database:/var/lib/mysql"
     networks:
       - MojaveNet
+    restart: always
+    env_file:
+      - .env
 
   nginx:
     container_name: nginx
+    build: ./srcs/nginx
     image: nginx
     volumes:
-    - "webfiles:/etc/nginx/templates/Z"
+    - "webfiles:/etc/nginx/templates"
     ports:
     - "443:443/tcp"
     environment:
@@ -23,12 +28,26 @@ services:
     - NGINX_PORT=443
     networks:
       - MojaveNet
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - wordpress
 
   wordpress:
     container_name: wordpress
+    build: ./srcs/wordpress
     image: wordpress
     networks:
       - MojaveNet
+    restart: always
+    volumes:
+      - "webfiles:/var/www/html"
+    env_file:
+      - .env
+    depends_on:
+      - mariadb
+    
 
 networks:
   MojaveNet:
