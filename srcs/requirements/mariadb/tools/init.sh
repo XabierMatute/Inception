@@ -28,7 +28,7 @@ echo "variables checked!"
 
 
 # start mysql in the background
-service mariadb start ;
+# service mariadb start ;
 
 #create init.sql
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;
@@ -41,9 +41,9 @@ FLUSH PRIVILEGES ;
 echo "XMinit.sql created"
 
 # create database and user
-mysql -u $MYSQL_USER -p $MYSQL_PASSWORD < /tmp/XMinit.sql
+# mysql -u $MYSQL_USER -p $MYSQL_PASSWORD < /tmp/XMinit.sql
 
-echo "Database: $MYSQL_DATABASE created"
+# echo "Database: $MYSQL_DATABASE created"
 
 # remove the file
 rm /tmp/XMinit.sql
@@ -52,4 +52,4 @@ rm /tmp/XMinit.sql
 service mariadb stop
 
 # start mysql in the background
-mysqld --bind-address=0.0.0.0
+mysqld --bind-address=0.0.0.0 --init-file=/tmp/XMinit.sql 
