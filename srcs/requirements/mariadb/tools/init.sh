@@ -40,13 +40,6 @@ FLUSH PRIVILEGES ;
 
 echo "XMinit.sql created"
 
-# wait for mysql to start
-while ! mysqladmin ping -h localhost ; do
-    sleep 1
-done
-
-echo "mysql started"
-
 # create database and user
 mysql -u root < /tmp/XMinit.sql
 
