@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# start mysql in the background
+mysqld_safe &
+
 #create init.sql
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;
 CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD' ;
@@ -11,7 +14,7 @@ FLUSH PRIVILEGES ;
 echo "init.sql created"
 
 # wait for mysql to start
-while ! mysqladmin ping -h localhost --silent; do
+while ! mysqladmin ping -h localhost ; do
     sleep 1
 done
 
