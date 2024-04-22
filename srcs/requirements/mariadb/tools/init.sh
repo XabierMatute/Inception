@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# start mysql
-mysql
-
 #create init.sql
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;
 CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD' ;
@@ -13,6 +10,12 @@ FLUSH PRIVILEGES ;
 
 echo "init.sql created"
 
+# wait for mysql to start
+while ! mysqladmin ping -h localhost --silent; do
+    sleep 1
+done
+
+echo "mysql started"
 
 # create database and user
 mysql -u root < /tmp/init.sql
