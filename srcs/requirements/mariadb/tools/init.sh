@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # start mysql
-service mysql start
+mysql
 
 #create init.sql
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;
