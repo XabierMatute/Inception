@@ -41,7 +41,7 @@ FLUSH PRIVILEGES ;
 echo "XMinit.sql created"
 
 # create database and user
-mysql -u root < /tmp/XMinit.sql
+mysql -u root -p $MYSQL_ROOT_PASSWORD < /tmp/XMinit.sql
 
 echo "Database: $MYSQL_DATABASE created"
 
