@@ -28,7 +28,7 @@ echo "variables checked!"
 
 
 # start mysql in the background
-mysqld_safe &
+service mariadb start ;
 
 #create init.sql
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;
@@ -56,7 +56,7 @@ echo "Database: $MYSQL_DATABASE created"
 rm /tmp/XMinit.sql
 
 # stop mysql
-mysql -u root -p $MYSQL_ROOT_PASSWORD -e "SHUTDOWN"
+service mariadb stop
 
 # start mysql in the background
 mysqld --bind-address=0.0.0.0
