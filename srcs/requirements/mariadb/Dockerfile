@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 17:36:03 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/20 19:10:18 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/22 11:50:52 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,10 @@ EXPOSE 3306
 # instalar mariadb
 RUN apt -y update && \
     apt -y install mariadb-server mariadb-client
+
+# 
+RUN mkdir -p /run/mysqld
+RUN chown -R mysql:mysql /run/mysqld
 
 # copiar script de inicio
 

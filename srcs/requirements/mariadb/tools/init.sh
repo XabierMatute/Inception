@@ -13,6 +13,7 @@ FLUSH PRIVILEGES ;
 
 echo "init.sql created"
 
+
 # create database and user
 mysql -u root < /tmp/init.sql
 
