@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 17:36:03 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/22 12:51:31 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/22 12:54:00 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ RUN apt -y update && \
 # 
 RUN mkdir -p /run/mysqld
 RUN chown -R mysql:mysql /run/mysqld
-RUN chown -R mysql:mysql /run/mysqld/mysqld.sock
 
 # copiar script de inicio
 
