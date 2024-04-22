@@ -23,7 +23,7 @@ echo "Database: $MYSQL_DATABASE created"
 rm /tmp/init.sql
 
 # stop mysql
-service mysql stop
+mysql -u root -e "SHUTDOWN"
 
 # start mysql in the background
 mysqld --bind-address=0.0.0.0
