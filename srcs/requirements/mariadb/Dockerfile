@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 17:36:03 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/22 14:09:27 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/23 18:51:19 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,3 @@ RUN chmod +x /tmp/init.sh
 # iniciar servicio
 
 CMD [ "/tmp/init.sh" ]
-
-# Healthcheck
-HEALTHCHECK --interval=5m --timeout=3s \
-  CMD mysql -u root -p $MYSQL_ROOT_PASSWORD -e "SELECT 1" || exit 1
