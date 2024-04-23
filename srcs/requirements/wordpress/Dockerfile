@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 19:49:58 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/20 19:14:46 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/23 18:58:55 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ RUN apt -y update && \
     # curl necesario para WP-CLI
 
 COPY tools/init.sh /init.sh
+COPY tools/icon.png /favicon.ico
 RUN chmod +x /init.sh
 
+WORKDIR /var/www/html
 CMD [ "/init.sh" ]
