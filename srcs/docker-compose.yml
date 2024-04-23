@@ -1,10 +1,10 @@
-version: '3'
-
 services:
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
     image: mariadb
+    expose:
+      - 3306
     volumes:
       - "database:/var/lib/mysql"
     networks:
@@ -18,7 +18,7 @@ services:
     build: ./requirements/nginx
     image: nginx
     volumes:
-    - "webfiles:/etc/nginx/templates"
+    - "webfiles:/var/www/html"
     ports:
     - "443:443/tcp"
     environment:
@@ -39,6 +39,8 @@ services:
     networks:
       - MojaveNet
     restart: always
+    expose:
+      - 9000
     volumes:
       - "webfiles:/var/www/html"
     env_file:
@@ -66,4 +68,3 @@ volumes:
       type: volume
       device: /home/xmatute-/data/webfiles # tienen que existir
       o: bind
-
