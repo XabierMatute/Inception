@@ -46,7 +46,7 @@ echo "XMinit.sql created"
 # echo "Database: $MYSQL_DATABASE created"
 
 # remove the file
-rm /tmp/XMinit.sql
+# rm /tmp/XMinit.sql
 
 # stop mysql
 service mariadb stop
