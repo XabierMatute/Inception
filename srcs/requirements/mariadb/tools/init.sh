@@ -36,8 +36,5 @@ FLUSH PRIVILEGES ;
 
 echo "XMinit.sql created"
 
-# stop mysql
-service mariadb stop
-
-# start mysql in the background
+# start mysql 
 mysqld --bind-address=0.0.0.0 --init-file=/tmp/XMinit.sql 
