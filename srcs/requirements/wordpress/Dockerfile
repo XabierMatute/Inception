@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 19:49:58 by xmatute-          #+#    #+#              #
-#    Updated: 2024/04/23 18:58:55 by xmatute-         ###   ########.fr        #
+#    Updated: 2024/04/23 18:59:20 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,11 @@ FROM debian:oldstable
 # Etiqueta del mantenedor
 LABEL maintainer="xmatute- <xmatute-@student.42.fr>"
 
-# Exponer puerto
-
+# Exponer puertos
 # MariaDB
 EXPOSE 3306
 # WordPress
 EXPOSE 9000
-
 
 RUN apt -y update && \
     apt -y install wordpress && \
