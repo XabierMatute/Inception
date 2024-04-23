@@ -92,7 +92,7 @@ else
     echo "core installed"
     ./wp-cli.phar user create $WP_USR $WP_EMAIL --role=author --user_pass=$WP_PWD --allow-root
     ./wp-cli.phar user create $WP_ADMIN_USER $WP_ADMIN_EMAIL --role=administrator --user_pass=$WP_ADMIN_PASSWORD --allow-root
-    # echo "user created"
+    echo "users created"
     ./wp-cli.phar theme install astra --activate --allow-root
     echo "astra installed"
     # ./wp-cli.phar plugin install redis-cache --activate --allow-root
