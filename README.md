@@ -4,6 +4,14 @@
 
 **Inception** is a system administration project that leverages Docker containers to deploy an interconnected service environment. This environment includes a web server powered by Nginx, a MariaDB database, and a WordPress application, all configured to work seamlessly within a virtual network.
 
+### What is Docker?
+
+Docker is a powerful containerization tool that allows developers and system administrators to package applications and their dependencies into lightweight, portable containers. These containers can run consistently across different environments, ensuring reliability and scalability. Docker has revolutionized the way applications are deployed and managed, making it a cornerstone of modern DevOps practices. Its ability to isolate applications, simplify dependency management, and streamline deployment processes has made it an essential tool in the software development lifecycle.
+
+### Transcendence of Docker
+
+Docker's impact on the tech industry is profound. It has transformed how applications are developed, tested, and deployed by enabling microservices architecture, simplifying CI/CD pipelines, and enhancing resource utilization. With Docker, teams can achieve faster development cycles, reduce infrastructure costs, and ensure consistent performance across diverse environments. Its widespread adoption has made it a standard for containerization, influencing the development of complementary tools like Kubernetes for orchestration and Docker Compose for multi-container setups.
+
 ## Project Structure
 
 The project is organized into the following components:
@@ -25,6 +33,14 @@ The project is organized into the following components:
 - A container running a WordPress instance.
 - Initial setup is managed via the script [`init.sh`](srcs/requirements/wordpress/tools/init.sh).
 - Exposes port `9000`.
+
+## Tools Used
+
+### Dockerfile
+A **Dockerfile** is a script that contains a set of instructions to build a Docker image. It defines the base image, dependencies, configurations, and commands required to create a containerized application. Each service in this project has its own Dockerfile, ensuring that the containers are tailored to their specific requirements. This approach promotes modularity and simplifies the process of building and maintaining containers.
+
+### Docker Compose
+**Docker Compose** is a tool used to define and manage multi-container Docker applications. It uses a `docker-compose.yml` file to specify the services, networks, and volumes required for the application. In this project, Docker Compose is utilized to orchestrate the MariaDB, Nginx, and WordPress containers, enabling seamless communication between them within the virtual network `MojaveNet`. This tool simplifies the deployment process, allowing all services to be started, stopped, and managed with a single command.
 
 ## Usage
 
