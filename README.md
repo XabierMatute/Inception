@@ -1,50 +1,69 @@
 # Inception
 
-## Descripción
+## Overview
 
-Inception es un proyecto de administración de sistemas que utiliza contenedores Docker para implementar un entorno de servicios interconectados. Este entorno incluye un servidor web con Nginx, una base de datos MariaDB y una aplicación WordPress, todos configurados para trabajar juntos en una red virtual.
+**Inception** is a system administration project that leverages Docker containers to deploy an interconnected service environment. This environment includes a web server powered by Nginx, a MariaDB database, and a WordPress application, all configured to work seamlessly within a virtual network.
 
-## Estructura del Proyecto
+## Project Structure
 
-El proyecto está organizado en la siguiente estructura:
+The project is organized into the following components:
 
-## Servicios
+## Services
 
 ### MariaDB
-- Contenedor que ejecuta una base de datos MariaDB.
-- Configuración inicial realizada mediante el script [`init.sh`](srcs/requirements/mariadb/tools/init.sh).
-- Expone el puerto `3306`.
+- A container running a MariaDB database instance.
+- Initial configuration is handled via the script [`init.sh`](srcs/requirements/mariadb/tools/init.sh).
+- Exposes port `3306`.
 
 ### Nginx
-- Servidor web configurado para servir contenido de WordPress.
-- Utiliza un certificado SSL generado automáticamente.
-- Configuración definida en [`default.conf`](srcs/requirements/nginx/conf/default.conf).
-- Expone el puerto `443`.
+- A web server configured to serve WordPress content.
+- Automatically generates an SSL certificate for secure communication.
+- Configuration is defined in [`default.conf`](srcs/requirements/nginx/conf/default.conf).
+- Exposes port `443`.
 
 ### WordPress
-- Contenedor que ejecuta una instancia de WordPress.
-- Configuración inicial realizada mediante el script [`init.sh`](srcs/requirements/wordpress/tools/init.sh).
-- Expone el puerto `9000`.
+- A container running a WordPress instance.
+- Initial setup is managed via the script [`init.sh`](srcs/requirements/wordpress/tools/init.sh).
+- Exposes port `9000`.
 
-## Uso
+## Usage
 
-### Requisitos
-- Docker y Docker Compose instalados en el sistema.
+### Requirements
+To run this project, ensure the following tools are installed on your system:
+- Docker
+- Docker Compose
 
-### Comandos Makefile
-El proyecto incluye un Makefile para simplificar la gestión de los contenedores:
+### Makefile Commands
+A Makefile is included to simplify container management:
 
-- `make all`: Construye y levanta los contenedores en segundo plano.
-- `make clean`: Detiene los contenedores y elimina los volúmenes.
-- `make fclean`: Limpia completamente el entorno Docker, incluyendo volúmenes y contenedores.
-- `make re`: Reconstruye el proyecto desde cero.
+- `make all`: Builds and starts the containers in detached mode.
+- `make clean`: Stops the containers and removes associated volumes.
+- `make fclean`: Completely cleans the Docker environment, including volumes and containers.
+- `make re`: Rebuilds the project from scratch.
 
-### Configuración de Variables de Entorno
-Las variables de entorno necesarias para los contenedores están definidas en [`empty.env`](srcs/requirements/tools/empty.env). Asegúrate de completarlas antes de ejecutar el proyecto.
+### Environment Variables
+The required environment variables for the containers are defined in [`empty.env`](srcs/requirements/tools/empty.env). Make sure to populate this file with the necessary values before running the project.
 
-## Notas
-- Los volúmenes utilizados para persistencia de datos están configurados en [`docker-compose.yml`](srcs/docker-compose.yml).
-- La red virtual utilizada por los contenedores se llama `MojaveNet`.
+## Technical Notes
+- Data persistence is managed through Docker volumes, as configured in [`docker-compose.yml`](srcs/docker-compose.yml).
+- The containers communicate over a virtual network named `MojaveNet`.
 
-## Autor
-Creado por **xmatute-** (<xmatute-@student.42.fr>)
+## Competencies Demonstrated
+
+This project showcases a range of technical and professional skills:
+
+### Key Skills:
+1. **Problem-Solving**: Designing and implementing a complex system using modern tools.
+2. **Documentation and Workflow**: Clear and structured project documentation.
+3. **Adaptability**: Familiarity with containerization technologies like Docker.
+
+### Technical Expertise:
+1. **System Administration**: Setting up and managing interconnected services using Docker containers.
+2. **Networking**: Configuration of virtual networks for secure and efficient communication between services.
+3. **Automation**: Use of scripts and Makefile commands to streamline deployment and maintenance processes.
+4. **Security**: Implementation of SSL certificates for secure web communication.
+5. **Database Management**: Configuration and deployment of MariaDB for data persistence.
+6. **Web Development**: Deployment of WordPress as a content management system, integrated with Nginx for optimized performance.
+
+## Author
+Created by **xmatute-** (<xmatute-@student.42.fr>)
